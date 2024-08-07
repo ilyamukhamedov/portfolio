@@ -8,6 +8,7 @@ const NavBar = ({ activeTab }) => {
   const changeTab = (value) => {
     dispatch(changeTabActive(value));
   };
+
   return (
     <header>
       <div className="logo">

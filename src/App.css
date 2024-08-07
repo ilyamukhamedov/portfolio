@@ -3,6 +3,8 @@
 
 body {
   margin: 0;
+  display: flex;
+  justify-content: center;
   font-family: Poppins;
   background-color: #010824;
   color: #eee;
@@ -58,10 +60,78 @@ header {
     gap: 30px;
     & span {
       cursor: pointer;
+      transition: 0.2s ease;
     }
     & .active {
       color: #5bb450;
       text-shadow: 0 0 5px;
     }
+  }
+}
+
+.section {
+  width: min(1300px, 100%);
+  margin: auto;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+section.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & .content {
+    font-family: "MuseoModerno", system-ui;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    & .name {
+      font-size: 3em;
+      font-weight: bold;
+      line-height: 1em;
+      & span {
+        background-image: linear-gradient(to right, #72bf62, #e49534, #5bb450);
+        background-size: 200% auto;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        animation: gradientAnimation 3s linear infinite;
+      }
+    }
+    & .des {
+      max-width: 500px;
+      font-size: medium;
+      color: #eee5;
+      margin: 30px 0;
+      border-left: 0.4em solid #5bb450;
+      padding-left: 2em;
+    }
+    & a {
+      display: inline-block;
+      font-size: medium;
+      color: #eee;
+      font-weight: bold;
+      text-decoration: none;
+      border: 1px solid #5bb450;
+      background-color: transparent;
+      width: max-content;
+      padding: 20px 20px;
+      border-radius: 20px;
+      transition: 0.4s ease;
+      &:hover {
+        border: 1px solid transparent;
+        /* background-color: #5bb450; */
+        box-shadow: 0px 0px 10px 2px #5bb450 inset;
+      }
+    }
+  }
+}
+
+@keyframes gradientAnimation {
+  to {
+    background-position: 200% center;
   }
 }
