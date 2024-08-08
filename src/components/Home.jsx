@@ -13,13 +13,32 @@ const Home = () => {
           Currently, I'm looking to join a team where I can grow my skills and
           contribute to meaningful projects.
         </div>
-        <a
-          href="/Resume_Ilya Mukhamedov.docx"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          Download My CV
-        </a>
+        <div className="box">
+          <a
+            className="btn"
+            href="/Resume_Ilya Mukhamedov.docx"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Download My CV
+          </a>
+
+          <a
+            href="https://github.com/ilyamukhamedov"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <img src="/github.svg" alt="github logo" />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/ilyamukhamedov/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <img src="/linkedin.svg" alt="github logo" />
+          </a>
+        </div>
       </div>
     </section>
   );
