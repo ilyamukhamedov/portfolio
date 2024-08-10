@@ -1,10 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=MuseoModerno:wght@200;500;700&familyPoppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=MuseoModerno:wght@200;500;700&display=swap");
-
 body {
   margin: 0;
-  display: flex;
-  justify-content: center;
   font-family: Poppins;
   background-color: #010824;
   color: #eee;
@@ -23,12 +20,12 @@ body {
     height: 400px;
     content: "";
     background-image: linear-gradient(to right, #5bb450, #3b8132);
-    /* z-index: -1; */
+    z-index: -1;
     top: -200px;
     left: calc(50% - 200px);
     border-radius: 50% 50% 0 0;
     pointer-events: none;
-    filter: blur(250px);
+    filter: blur(350px);
   }
 }
 
@@ -51,8 +48,18 @@ header {
   box-sizing: border-box;
   z-index: 100;
   backdrop-filter: blur(10px);
+  & a {
+    width: 35px;
+    height: 35px;
+  }
   & img {
-    width: 50px;
+    width: 35px;
+    opacity: 0.7;
+    transition: 0.2s ease;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.5;
+    }
   }
   & .logo,
   nav {
@@ -77,6 +84,7 @@ header {
 }
 
 section.home {
+  padding-top: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,6 +120,7 @@ section.home {
     & .box {
       display: flex;
       gap: 20px;
+      justify-content: center;
       align-items: center;
     }
     & .btn {
@@ -129,17 +138,75 @@ section.home {
       transition: 0.4s ease;
       &:hover {
         border: 1px solid transparent;
-        /* background-color: #5bb450; */
         box-shadow: 0px 0px 10px 2px #5bb450 inset;
       }
     }
+    & .social {
+      height: 20px;
+      padding-bottom: 5px;
+    }
     & img {
-      width: 20px;
-      padding-top: 5px;
+      width: 25px;
       transition: 0.2s ease;
       &:hover {
         opacity: 0.7;
-        transform: scale(1.2);
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+& .skills {
+  & .title {
+    padding-top: 80px;
+    text-align: center;
+    font-size: 2.5em;
+    font-family: "MuseoModerno", system-ui;
+  }
+  & .list {
+    margin: auto;
+    padding: 0 40px;
+    max-width: 400px;
+    text-align: center;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 60px);
+    justify-content: space-between;
+    gap: 3vw;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 70%;
+      height: 80%;
+      background-image: linear-gradient(-45deg, #e49534, #5bb450);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0.7;
+      filter: blur(15px);
+      pointer-events: none;
+      border-radius: 20px;
+      background-size: 100% auto;
+    }
+    & .item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(50px);
+      width: 20px;
+      height: 20px;
+      padding: 20px;
+      border-radius: 20px;
+      background-color: #1a240135;
+      transition: 0.2s ease;
+      & svg {
+        font-size: 35px;
+      }
+      & img {
+        width: 35px;
+      }
+      &:hover {
+        transform: translateY(-5px);
       }
     }
   }

@@ -24,6 +24,7 @@ const Home = () => {
           </a>
 
           <a
+            className="social"
             href="https://github.com/ilyamukhamedov"
             target="_blank"
             rel="noreferrer noopener"
@@ -32,6 +33,7 @@ const Home = () => {
           </a>
 
           <a
+            className="social"
             href="https://www.linkedin.com/in/ilyamukhamedov/"
             target="_blank"
             rel="noreferrer noopener"

@@ -12,7 +12,9 @@ const NavBar = ({ activeTab }) => {
   return (
     <header>
       <div className="logo">
-        <img src="/logo.svg" alt="logo" />
+        <a href="https://github.com/ilyamukhamedov" target="_blank">
+          <img src="/logo.svg" alt="logo" />
+        </a>
       </div>
       <nav>
         {linkNav.map((value) => (
