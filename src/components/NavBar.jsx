@@ -11,11 +11,14 @@ const NavBar = ({ activeTab }) => {
 
   return (
     <header>
-      <div className="logo">
-        <a href="https://github.com/ilyamukhamedov" target="_blank">
-          <img src="/logo.svg" alt="logo" />
-        </a>
-      </div>
+      <a
+        className="logo"
+        href="https://github.com/ilyamukhamedov"
+        target="_blank"
+      >
+        <img src="/logo.svg" alt="logo" />
+      </a>
+
       <nav>
         {linkNav.map((value) => (
           <span

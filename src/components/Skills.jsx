@@ -42,7 +42,6 @@ const Skills = () => {
       <div className="list">
         {listSkills.map((value, key) => (
           <div className="item" key={key}>
-            {console.log(typeof value.icon)}
             {typeof value.icon === "string" ? (
               <img src={value.icon} alt={value.name} />
             ) : (
