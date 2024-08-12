@@ -1,9 +1,24 @@
-# React + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This portfolio project showcases my work as a Full Stack Developer, built with modern web development tools and techniques. It serves as a demonstration of my skills in creating dynamic and responsive web applications.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# portfolio
+To run this project locally, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/ilyamukhamedov/portfolio`
+2. Navigate to the project directory: `cd portfolio`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm run dev`
+
+### Technologies Used
+
+- Vite: For faster builds and optimized development workflow.
+- React: The main library used for building the UI.
+- Typed.js: For adding typing animations to the text.
+- Custom Hooks: Created for handling reusable logic in a clean and maintainable way.
+- Redux: For managing global application state.
+
+#### Deploy
+
+[https://portfolio-alpha-drab-62.vercel.app/]

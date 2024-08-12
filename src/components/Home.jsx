@@ -23,7 +23,6 @@ const Home = () => {
       <div className="content">
         <div className="name">
           <span ref={el}></span>
-          {/* Hi, I am <span>Ilya Mukhamedov</span> */}
         </div>
         <div className="des">
           I'm a Full Stack Developer focused on building and maintaining web
