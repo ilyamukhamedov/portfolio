@@ -1,11 +1,29 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
+import CustomHook from "./CustomHook";
+import Typed from "typed.js";
 
 const Home = () => {
+  const el = React.useRef(null);
+  const refTab = useRef();
+  CustomHook(refTab);
+
+  useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: ["Hi, I am <p>Ilya Mukhamedov.</p>"],
+      typeSpeed: 90,
+    });
+
+    return () => {
+      typed.destroy();
+    };
+  }, []);
+
   return (
-    <section className="home">
+    <section className="home" ref={refTab}>
       <div className="content">
         <div className="name">
-          Hi, i am <span>Ilya Mukhamedov</span>
+          <span ref={el}></span>
+          {/* Hi, I am <span>Ilya Mukhamedov</span> */}
         </div>
         <div className="des">
           I'm a Full Stack Developer focused on building and maintaining web

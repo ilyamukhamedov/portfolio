@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import CustomHook from "./CustomHook";
 
 const Projects = () => {
   const [listProjects] = React.useState([
@@ -39,12 +40,22 @@ const Projects = () => {
       image: "/around.webp",
     },
   ]);
+
+  const refTab = useRef();
+  const refDivs = useRef([]);
+  CustomHook(refTab, refDivs);
   return (
-    <section className="projects">
-      <div className="title">Projects</div>
+    <section className="projects" ref={refTab}>
+      <div className="title" ref={(el) => el && refDivs.current.push(el)}>
+        Projects
+      </div>
       <div className="list">
         {listProjects.map((value, key) => (
-          <div className="item" key={key}>
+          <div
+            className="item"
+            key={key}
+            ref={(el) => el && refDivs.current.push(el)}
+          >
             <div className="image">
               <img src={value.image} alt={value.name + " project image"} />
             </div>

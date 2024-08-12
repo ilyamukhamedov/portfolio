@@ -15,19 +15,19 @@ const CustomHook = (refTab = null, refDivs = null) => {
         div.classList.add("animation");
       });
 
-      //   const handleScroll = () => {
-      //     const scrollPosition = window.scrollY;
-      //     thisDivs.current.forEach((div) => {
-      //       const offsetTop = div.getBoundingClientRect().top + scrollPosition;
-      //       if (scrollPosition >= offsetTop - (window.innerHeight / 4) * 3) {
-      //         div.classList.add("active");
-      //       } else {
-      //         div.classList.remove("active");
-      //       }
-      //     });
-      //   };
+      const handleScroll = () => {
+        const scrollPosition = window.scrollY;
+        thisDivs.current.forEach((div) => {
+          const offsetTop = div.getBoundingClientRect().top + scrollPosition;
+          if (scrollPosition >= offsetTop - (window.innerHeight / 4) * 3) {
+            div.classList.add("active");
+          } else {
+            div.classList.remove("active");
+          }
+        });
+      };
 
-      //   window.addEventListener("scroll", handleScroll);
+      window.addEventListener("scroll", handleScroll);
     }
   }, [activeTab]);
 };

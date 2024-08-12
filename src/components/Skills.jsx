@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import vercel from "../../public/vercel.svg";
 import babel from "../../public/babel.svg";
@@ -17,6 +17,7 @@ import {
   faNode,
   faGitAlt,
 } from "@fortawesome/free-brands-svg-icons";
+import CustomHook from "./CustomHook";
 
 const Skills = () => {
   const [listSkills] = useState([
@@ -36,12 +37,23 @@ const Skills = () => {
     { name: "Vite", icon: vite },
     { name: "Figma", icon: figma },
   ]);
+
+  const refTab = useRef();
+  const refDivs = useRef([]);
+  CustomHook(refTab, refDivs);
+
   return (
-    <section className="skills">
-      <div className="title">Skills</div>
+    <section className="skills" ref={refTab}>
+      <div className="title" ref={(el) => el && refDivs.current.push(el)}>
+        Skills
+      </div>
       <div className="list">
         {listSkills.map((value, key) => (
-          <div className="item" key={key}>
+          <div
+            className="item"
+            key={key}
+            ref={(el) => el && refDivs.current.push(el)}
+          >
             {typeof value.icon === "string" ? (
               <img src={value.icon} alt={value.name} />
             ) : (

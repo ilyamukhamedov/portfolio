@@ -86,7 +86,7 @@ header {
   box-sizing: border-box;
 }
 
-section.home {
+& .home {
   padding-top: 150px;
   display: flex;
   align-items: center;
@@ -98,13 +98,15 @@ section.home {
     gap: 30px;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
     & .name {
       font-family: "MuseoModerno", system-ui;
-      font-size: 3em;
+      text-align: center;
+      font-size: 4em;
       font-weight: bold;
       line-height: 1em;
-      & span {
+
+      & p {
+        display: inline;
         background-image: linear-gradient(to right, #72bf62, #e49534, #5bb450);
         background-size: 200% auto;
         -webkit-text-fill-color: transparent;
@@ -329,6 +331,73 @@ section.home {
   opacity: 1;
   filter: blur(0);
   transform: translateY(0);
+}
+
+.icon-bar {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  section {
+    padding: 20px;
+  }
+
+  .home {
+    & .content {
+      & .name {
+        font-size: 3em;
+      }
+    }
+  }
+
+  .projects {
+    & .list {
+      & .item {
+        padding: 0;
+        grid-template-columns: 1fr;
+        & .content {
+          & h3 {
+            font-size: 2em;
+            text-align: center;
+          }
+          & .des {
+            font-size: 1em;
+            text-align: center;
+          }
+        }
+      }
+      & .item:nth-child(2n) {
+        & .content,
+        .image {
+          grid-row-start: auto;
+          grid-column-start: auto;
+          grid-column-end: auto;
+        }
+      }
+    }
+  }
+  header {
+    & .icon-bar {
+      display: block;
+      font-size: 1.5em;
+    }
+    nav {
+      position: fixed;
+      font-size: large;
+      background-color: #010824e2;
+      width: 85%;
+      height: 100vh;
+      inset: 0 auto 0 0;
+      flex-direction: column;
+      padding: 50px;
+      box-sizing: border-box;
+      left: -100%;
+      transition: 0.5s;
+      &.active {
+        left: 0;
+      }
+    }
+  }
 }
 
 @keyframes gradientAnimation {

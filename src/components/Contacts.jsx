@@ -22,20 +22,16 @@ const Contacts = () => {
 
   const refTab = useRef();
   const divs = useRef([]);
-  CustomHook(refTab);
+  CustomHook(refTab, divs);
 
   return (
     <section className="contacts" ref={refTab}>
       <div className="title" ref={(el) => el && divs.current.push(el)}>
         Contacts
       </div>
-      <div className="list">
+      <div className="list" ref={(el) => el && divs.current.push(el)}>
         {listContacts.map((value, key) => (
-          <div
-            className="item"
-            key={key}
-            ref={(el) => el && divs.current.push(el)}
-          >
+          <div className="item" key={key}>
             <h3>{value.title}</h3>
             <a href={value.url} target="_blank">
               {value.value}

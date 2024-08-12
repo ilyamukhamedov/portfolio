@@ -1,12 +1,21 @@
 import React, { useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import { changeTabActive } from "../redux/action";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = ({ activeTab }) => {
-  const [linkNav] = useState(["home", "skills", "projects", "contacts"]);
+  const [linkNav] = useState(["home", "projects", "skills", "contacts"]);
+  const [statusNav, setStatusNav] = useState("");
+
   const dispatch = useDispatch();
   const changeTab = (value) => {
     dispatch(changeTabActive(value));
+    toggleNav();
+  };
+
+  const toggleNav = () => {
+    setStatusNav(statusNav === "active" ? "" : "active");
   };
 
   return (
@@ -19,7 +28,7 @@ const NavBar = ({ activeTab }) => {
         <img src="/logo.svg" alt="logo" />
       </a>
 
-      <nav>
+      <nav className={statusNav}>
         {linkNav.map((value) => (
           <span
             key={value}
@@ -30,6 +39,9 @@ const NavBar = ({ activeTab }) => {
           </span>
         ))}
       </nav>
+      <div className="icon-bar" onClick={toggleNav}>
+        <FontAwesomeIcon icon={faBars} />
+      </div>
     </header>
   );
 };
