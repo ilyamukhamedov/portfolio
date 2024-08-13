@@ -1,14 +1,5 @@
 import React, { useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import vercel from "../../public/vercel.svg";
-import babel from "../../public/babel.svg";
-import webpack from "../../public/webpack.svg";
-import postman from "../../public/postman.svg";
-import mongodb from "../../public/mongodb.svg";
-import npm from "../../public/npm.svg";
-import redux from "../../public/redux.svg";
-import vite from "../../public/vite.svg";
-import figma from "../../public/figma.svg";
 import {
   faHtml5,
   faCss3,
@@ -27,15 +18,16 @@ const Skills = () => {
     { name: "React", icon: faReact },
     { name: "Node.js", icon: faNode },
     { name: "Git", icon: faGitAlt },
-    { name: "Babel", icon: babel },
-    { name: "Postman", icon: postman },
-    { name: "MongoDB", icon: mongodb },
-    { name: "Webpack", icon: webpack },
-    { name: "Vercel", icon: vercel },
-    { name: "npm", icon: npm },
-    { name: "Redux", icon: redux },
-    { name: "Vite", icon: vite },
-    { name: "Figma", icon: figma },
+    { name: "Babel", icon: "/babel.svg" },
+    { name: "Postman", icon: "/postman.svg" },
+    { name: "MongoDB", icon: "/mongodb.svg" },
+    { name: "Webpack", icon: "/webpack.svg" },
+    { name: "Vercel", icon: "/vercel.svg" },
+    { name: "NPM", icon: "/npm.svg" },
+    { name: "Redux", icon: "/redux.svg" },
+    { name: "Vite", icon: "/vite.svg" },
+    { name: "Figma", icon: "/figma.svg" },
+    { name: "VS Code", icon: "/vscode.svg" },
   ]);
 
   const refTab = useRef();
@@ -59,6 +51,9 @@ const Skills = () => {
             ) : (
               <FontAwesomeIcon icon={value.icon} />
             )}
+            <div className="tooltip">
+              <p>{value.name}</p>
+            </div>
           </div>
         ))}
       </div>

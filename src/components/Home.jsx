@@ -33,11 +33,11 @@ const Home = () => {
         <div className="box">
           <a
             className="btn"
-            href="/Resume_Ilya Mukhamedov.docx"
+            href="/Resume_Ilya Mukhamedov.pdf"
             target="_blank"
             rel="noreferrer noopener"
           >
-            Download My CV
+            Check My CV
           </a>
 
           <a

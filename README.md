@@ -21,4 +21,4 @@ To run this project locally, follow these steps:
 
 #### Deploy
 
-[https://portfolio-alpha-drab-62.vercel.app/]
+[https://ilya-potfolio.vercel.app/]
