@@ -3,8 +3,9 @@ import { connect, useDispatch } from "react-redux";
 import { changeTabActive } from "../redux/action";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import Toggle from "./Toggle";
 
-const NavBar = ({ activeTab }) => {
+const NavBar = ({ activeTab, onChangeTheme, switchToggle }) => {
   const [linkNav] = useState(["home", "projects", "skills", "contacts"]);
   const [statusNav, setStatusNav] = useState("");
 
@@ -29,6 +30,7 @@ const NavBar = ({ activeTab }) => {
       </a>
 
       <nav className={statusNav}>
+        <Toggle onChangeTheme={onChangeTheme} switchToggle={switchToggle} />
         {linkNav.map((value) => (
           <span
             key={value}

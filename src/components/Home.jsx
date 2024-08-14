@@ -33,7 +33,7 @@ const Home = () => {
         <div className="box">
           <a
             className="btn"
-            href="/Resume_Ilya Mukhamedov.pdf"
+            href="https://drive.google.com/file/d/1BXMGdNjqTigFBVvXPfZ901PhaDjJTqwY/view"
             target="_blank"
             rel="noreferrer noopener"
           >
