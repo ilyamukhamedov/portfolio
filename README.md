@@ -18,6 +18,7 @@ To run this project locally, follow these steps:
 - Typed.js: For adding typing animations to the text.
 - Custom Hooks: Created for handling reusable logic in a clean and maintainable way.
 - Redux: For managing global application state.
+- i18next: Used for implementing localization, including translation of the website.
 
 #### Deploy
 
