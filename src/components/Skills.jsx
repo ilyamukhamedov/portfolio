@@ -9,6 +9,7 @@ import {
   faGitAlt,
 } from "@fortawesome/free-brands-svg-icons";
 import CustomHook from "./CustomHook";
+import { useTranslation } from "react-i18next";
 
 const Skills = () => {
   const [listSkills] = useState([
@@ -33,11 +34,12 @@ const Skills = () => {
   const refTab = useRef();
   const refDivs = useRef([]);
   CustomHook(refTab, refDivs);
+  const { t } = useTranslation();
 
   return (
     <section className="skills" ref={refTab}>
       <div className="title" ref={(el) => el && refDivs.current.push(el)}>
-        Skills
+        {t("skills")}
       </div>
       <div className="list">
         {listSkills.map((value, key) => (

@@ -1,24 +1,31 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CustomHook from "./CustomHook";
+import { useTranslation } from "react-i18next";
 
 const Contacts = () => {
-  const [listContacts] = useState([
-    {
-      title: "Email",
-      value: "honeyflym@gmail.com",
-      url: "mailto:honeyflym@gmail.com",
-    },
-    {
-      title: "Phone Number",
-      value: "+972534581722",
-      url: "tel:+972534581722",
-    },
-    {
-      title: "Telegram",
-      value: "Contact me",
-      url: "http://t.me/Kreker911",
-    },
-  ]);
+  const { t } = useTranslation();
+
+  const [listContacts, setListContacts] = useState([]);
+
+  useEffect(() => {
+    setListContacts([
+      {
+        title: t("contacts_mail"),
+        value: "honeyflym@gmail.com",
+        url: "mailto:honeyflym@gmail.com",
+      },
+      {
+        title: t("contacts_phone"),
+        value: "+972534581722",
+        url: "tel:+972534581722",
+      },
+      {
+        title: t("contacts_telegram"),
+        value: t("contacts_des"),
+        url: "http://t.me/Kreker911",
+      },
+    ]);
+  }, [t]);
 
   const refTab = useRef();
   const divs = useRef([]);
@@ -27,7 +34,7 @@ const Contacts = () => {
   return (
     <section className="contacts" ref={refTab}>
       <div className="title" ref={(el) => el && divs.current.push(el)}>
-        Contacts
+        {t("contacts")}
       </div>
       <div className="list" ref={(el) => el && divs.current.push(el)}>
         {listContacts.map((value, key) => (

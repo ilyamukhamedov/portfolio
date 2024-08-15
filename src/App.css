@@ -98,6 +98,8 @@ header {
   & nav {
     display: flex;
     align-items: center;
+    position: relative;
+
     gap: 30px;
     & span {
       color: var(--primary-color);
@@ -107,6 +109,32 @@ header {
     & .active {
       color: #5bb450;
       text-shadow: 0 0 5px;
+    }
+    & .modal {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: absolute;
+      top: 30px;
+      right: -10px;
+      padding: 5px;
+      border-radius: 10px;
+      background-color: var(--background-color);
+      box-shadow: 0 0 1px #5bb450;
+      backdrop-filter: blur(5px);
+      & p {
+        margin: 0;
+        transition: 0.2s ease;
+        padding: 2px 4px;
+        border-radius: 4px;
+        &:hover {
+          color: #5bb450;
+          text-shadow: 0 0 5px;
+          cursor: pointer;
+
+          background-color: var(--primary-color);
+        }
+      }
     }
   }
 }
@@ -259,9 +287,7 @@ header {
       left: 50%;
       transform: translate(-50%, -50%);
       background-color: var(--background-color);
-
       color: var(--primary-color);
-
       padding: 20px;
       width: 30px;
       height: 30px;
@@ -461,6 +487,11 @@ header {
   display: none;
 }
 
+.icon-globe {
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
 @media screen and (max-width: 767px) {
   section {
     padding: 20px;
@@ -502,6 +533,7 @@ header {
   }
   header {
     & .icon-bar {
+      cursor: pointer;
       display: block;
       font-size: 1.5em;
     }
@@ -520,6 +552,10 @@ header {
       &.active {
         left: 0;
       }
+      & .modal {
+        position: static;
+        flex-direction: row;
+      }
     }
   }
 }
@@ -527,17 +563,5 @@ header {
 @keyframes gradientAnimation {
   to {
     background-position: 200% center;
-  }
-}
-
-@keyframes gradientRotate {
-  0% {
-    --gradient-angle: -45deg;
-  }
-  50% {
-    --gradient-angle: 45deg;
-  }
-  100% {
-    --gradient-angle: -45deg;
   }
 }

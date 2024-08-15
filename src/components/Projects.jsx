@@ -1,32 +1,34 @@
 import React, { useRef } from "react";
 import CustomHook from "./CustomHook";
+import { useTranslation } from "react-i18next";
 
 const Projects = () => {
+  const { t } = useTranslation();
   const [listProjects] = React.useState([
     {
-      name: "Book Landing Part 1",
-      des: "This is the project of the first part of the book about landscape design.",
+      name: t("project_1_name"),
+      des: t("project_1_des"),
       url: "https://github.com/ilyamukhamedov/landing_part1",
       technologies: "HTML, CSS, JS, React, SwiperJS, ...",
       image: "/landing1.webp",
     },
     {
-      name: "Book Landing Part 2",
-      des: "This is the project of the second part of the book about landscape design.",
+      name: t("project_2_name"),
+      des: t("project_2_des"),
       url: "https://github.com/ilyamukhamedov/landing_part2",
       technologies: "HTML, CSS, JS, React, SwiperJS, Telegram api, ...",
       image: "/landing2.webp",
     },
     {
       name: "Crypto Spotter",
-      des: "This project is a cryptocurrency dashboard that displays a list of cryptocurrencies with detailed information, historical data, and an interactive line chart showing price trends over various time periods.",
+      des: t("project_3_des"),
       url: "https://github.com/ilyamukhamedov/crypto-app-frontend",
       technologies: "HTML, CSS, JS, React, ChartJS, CoinGecko API, ...",
       image: "/crypto.webp",
     },
     {
       name: "WTWR",
-      des: "Or Weather Tailored Wardrobe Recommender, utilizes external weather data. The application offers personalized clothing suggestions to users, taking into account the current weather conditions in their local area.",
+      des: t("project_4_des"),
       url: "https://github.com/ilyamukhamedov/se_project_react",
       technologies:
         "HTML, CSS, JS, React, Weather API, MongoDB, Postman, Google Cloud, ...",
@@ -34,7 +36,7 @@ const Projects = () => {
     },
     {
       name: "Around The U.S.",
-      des: "This project is part of the Software Engineering program at TripleTen. It is a web application created using HTML, CSS, and JavaScript, following the design from Figma. The application is designed to display correctly on various screen sizes and includes interactive buttons for user interaction.",
+      des: t("project_5_des"),
       url: "https://github.com/ilyamukhamedov/se_project_aroundtheus",
       technologies: "HTML, CSS, JS, React, ...",
       image: "/around.webp",
@@ -47,7 +49,7 @@ const Projects = () => {
   return (
     <section className="projects" ref={refTab}>
       <div className="title" ref={(el) => el && refDivs.current.push(el)}>
-        Projects
+        {t("projects")}
       </div>
       <div className="list">
         {listProjects.map((value, key) => (
@@ -66,7 +68,7 @@ const Projects = () => {
                 <img src="/chip.svg" alt="image of chip" />
 
                 <div>
-                  <h4>Technologies</h4>
+                  <h4>{t("technologies")}</h4>
                   <div className="de">{value.technologies}</div>
                 </div>
               </div>
@@ -80,7 +82,7 @@ const Projects = () => {
                   <img alt="image of link" src="/link.svg" />
                 </a>
 
-                <h4>GitHub Repo</h4>
+                <h4>{t("github")}</h4>
               </div>
             </div>
           </div>

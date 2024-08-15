@@ -1,22 +1,24 @@
 import React, { useRef, useEffect } from "react";
 import CustomHook from "./CustomHook";
 import Typed from "typed.js";
+import { Trans, useTranslation } from "react-i18next";
 
 const Home = () => {
+  const { t } = useTranslation();
   const el = React.useRef(null);
   const refTab = useRef();
   CustomHook(refTab);
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ["Hi, I am <p>Ilya Mukhamedov.</p>"],
+      strings: [t("greeting")],
       typeSpeed: 90,
     });
 
     return () => {
       typed.destroy();
     };
-  }, []);
+  }, [t]);
 
   return (
     <section className="home" ref={refTab}>
@@ -25,10 +27,7 @@ const Home = () => {
           <span ref={el}></span>
         </div>
         <div className="des">
-          I'm a Full Stack Developer focused on building and maintaining web
-          applications. <br />
-          Currently, I'm looking to join a team where I can grow my skills and
-          contribute to meaningful projects.
+          <Trans i18nKey={"home_des"} components={{ 1: <br /> }} />
         </div>
         <div className="box">
           <a
@@ -37,7 +36,7 @@ const Home = () => {
             target="_blank"
             rel="noreferrer noopener"
           >
-            Check My CV
+            {t("resume")}
           </a>
 
           <a

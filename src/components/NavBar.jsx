@@ -1,13 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import { changeTabActive } from "../redux/action";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faGlobe } from "@fortawesome/free-solid-svg-icons";
 import Toggle from "./Toggle";
+import LanguageModal from "./LanguageModal";
+import { useTranslation } from "react-i18next";
 
 const NavBar = ({ activeTab, onChangeTheme, switchToggle }) => {
-  const [linkNav] = useState(["home", "projects", "skills", "contacts"]);
+  const { t } = useTranslation();
+
+  const [linkNav, setLinkNav] = useState([]);
+
+  useEffect(() => {
+    setLinkNav([
+      t("home_nav"),
+      t("projects_nav"),
+      t("skills_nav"),
+      t("contacts_nav"),
+    ]);
+  }, [t]);
+
   const [statusNav, setStatusNav] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsOpen(!isOpen);
+  };
 
   const dispatch = useDispatch();
   const changeTab = (value) => {
@@ -40,6 +59,10 @@ const NavBar = ({ activeTab, onChangeTheme, switchToggle }) => {
             {value}
           </span>
         ))}
+        <div className="icon-globe" onClick={toggleModal}>
+          <FontAwesomeIcon icon={faGlobe} />
+        </div>
+        {isOpen && <LanguageModal toggleModal={toggleModal} />}
       </nav>
       <div className="icon-bar" onClick={toggleNav}>
         <FontAwesomeIcon icon={faBars} />
