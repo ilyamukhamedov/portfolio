@@ -46,44 +46,6 @@ const Projects = () => {
       },
     ]);
   }, [t]);
-  // const [listProjects] = useState([
-  //   {
-  //     name: t("project_1_name"),
-  //     des: t("project_1_des"),
-  //     url: "https://github.com/ilyamukhamedov/landing_part1",
-  //     technologies: "HTML, CSS, JS, React, SwiperJS, ...",
-  //     image: "/landing1.webp",
-  //   },
-  //   {
-  //     name: t("project_2_name"),
-  //     des: t("project_2_des"),
-  //     url: "https://github.com/ilyamukhamedov/landing_part2",
-  //     technologies: "HTML, CSS, JS, React, SwiperJS, Telegram api, ...",
-  //     image: "/landing2.webp",
-  //   },
-  //   {
-  //     name: "Crypto Spotter",
-  //     des: t("project_3_des"),
-  //     url: "https://github.com/ilyamukhamedov/crypto-app-frontend",
-  //     technologies: "HTML, CSS, JS, React, ChartJS, CoinGecko API, ...",
-  //     image: "/crypto.webp",
-  //   },
-  //   {
-  //     name: "WTWR",
-  //     des: t("project_4_des"),
-  //     url: "https://github.com/ilyamukhamedov/se_project_react",
-  //     technologies:
-  //       "HTML, CSS, JS, React, Weather API, MongoDB, Postman, Google Cloud, ...",
-  //     image: "wtwr.webp",
-  //   },
-  //   {
-  //     name: "Around The U.S.",
-  //     des: t("project_5_des"),
-  //     url: "https://github.com/ilyamukhamedov/se_project_aroundtheus",
-  //     technologies: "HTML, CSS, JS, React, ...",
-  //     image: "/around.webp",
-  //   },
-  // ]);
 
   const refTab = useRef();
   const refDivs = useRef([]);
