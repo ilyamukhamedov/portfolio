@@ -37,7 +37,7 @@ const Skills = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="skills" ref={refTab}>
+    <section className="skills" id={t("skills_nav")} ref={refTab}>
       <div className="title" ref={(el) => el && refDivs.current.push(el)}>
         {t("skills")}
       </div>

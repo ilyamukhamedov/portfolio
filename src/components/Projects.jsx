@@ -51,7 +51,7 @@ const Projects = () => {
   const refDivs = useRef([]);
   CustomHook(refTab, refDivs);
   return (
-    <section className="projects" ref={refTab}>
+    <section className="projects" id={t("projects_nav")} ref={refTab}>
       <div className="title" ref={(el) => el && refDivs.current.push(el)}>
         {t("projects")}
       </div>

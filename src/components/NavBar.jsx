@@ -14,10 +14,10 @@ const NavBar = ({ activeTab, onChangeTheme, switchToggle }) => {
 
   useEffect(() => {
     setLinkNav([
-      t("home_nav"),
-      t("projects_nav"),
-      t("skills_nav"),
-      t("contacts_nav"),
+      { key: "home", label: t("home_nav") },
+      { key: "projects", label: t("projects_nav") },
+      { key: "skills", label: t("skills_nav") },
+      { key: "contacts", label: t("contacts_nav") },
     ]);
   }, [t]);
 
@@ -29,8 +29,8 @@ const NavBar = ({ activeTab, onChangeTheme, switchToggle }) => {
   };
 
   const dispatch = useDispatch();
-  const changeTab = (value) => {
-    dispatch(changeTabActive(value));
+  const changeTab = (key) => {
+    dispatch(changeTabActive(key));
     toggleNav();
   };
 
@@ -50,13 +50,13 @@ const NavBar = ({ activeTab, onChangeTheme, switchToggle }) => {
 
       <nav className={statusNav}>
         <Toggle onChangeTheme={onChangeTheme} switchToggle={switchToggle} />
-        {linkNav.map((value) => (
+        {linkNav.map(({ key, label }) => (
           <span
-            key={value}
-            className={activeTab === value ? "active" : ""}
-            onClick={() => changeTab(value)}
+            key={key}
+            className={activeTab === key ? "active" : ""}
+            onClick={() => changeTab(key)}
           >
-            {value}
+            {label}
           </span>
         ))}
         <div className="icon-globe" onClick={toggleModal}>

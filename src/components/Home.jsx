@@ -21,7 +21,7 @@ const Home = () => {
   }, [t]);
 
   return (
-    <section className="home" ref={refTab}>
+    <section className="home" id={t("home_nav")} ref={refTab}>
       <div className="content">
         <div className="name">
           <span ref={el}></span>
