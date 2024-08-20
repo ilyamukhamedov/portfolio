@@ -1,55 +1,52 @@
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import CustomHook from "./CustomHook";
 import { useTranslation } from "react-i18next";
 
 const Projects = () => {
   const { t } = useTranslation();
 
-  const [listProjects, setListProjects] = useState([]);
-
-  useEffect(() => {
-    setListProjects([
-      {
-        name: t("project_1_name"),
-        des: t("project_1_des"),
-        url: "https://github.com/ilyamukhamedov/landing_part1",
-        technologies: "HTML, CSS, JS, React, SwiperJS, ...",
-        image: "/landing1.webp",
-      },
-      {
-        name: t("project_2_name"),
-        des: t("project_2_des"),
-        url: "https://github.com/ilyamukhamedov/landing_part2",
-        technologies: "HTML, CSS, JS, React, SwiperJS, Telegram api, ...",
-        image: "/landing2.webp",
-      },
-      {
-        name: "Crypto Spotter",
-        des: t("project_3_des"),
-        url: "https://github.com/ilyamukhamedov/crypto-app-frontend",
-        technologies: "HTML, CSS, JS, React, ChartJS, CoinGecko API, ...",
-        image: "/crypto.webp",
-      },
-      {
-        name: "WTWR",
-        des: t("project_4_des"),
-        url: "https://github.com/ilyamukhamedov/wtvr",
-        technologies: "HTML, CSS, JS, React, ChartJS, CoinGecko API, ...",
-        image: "/wtwr.webp",
-      },
-      {
-        name: "Around The U.S.",
-        des: t("project_5_des"),
-        url: "https://github.com/ilyamukhamedov/se_project_aroundtheus",
-        technologies: "HTML, CSS, JS, React, ...",
-        image: "/around.webp",
-      },
-    ]);
-  }, [t]);
+  const [listProjects] = useState([
+    {
+      name: t("project_1_name"),
+      des: t("project_1_des"),
+      url: "https://github.com/ilyamukhamedov/landing_part1",
+      technologies: "HTML, CSS, JS, React, SwiperJS, ...",
+      image: "/landing1.webp",
+    },
+    {
+      name: t("project_2_name"),
+      des: t("project_2_des"),
+      url: "https://github.com/ilyamukhamedov/landing_part2",
+      technologies: "HTML, CSS, JS, React, SwiperJS, Telegram api, ...",
+      image: "/landing2.webp",
+    },
+    {
+      name: "Crypto Spotter",
+      des: t("project_3_des"),
+      url: "https://github.com/ilyamukhamedov/crypto-app-frontend",
+      technologies: "HTML, CSS, JS, React, ChartJS, CoinGecko API, ...",
+      image: "/crypto.webp",
+    },
+    {
+      name: "WTWR",
+      des: t("project_4_des"),
+      url: "https://github.com/ilyamukhamedov/wtvr",
+      technologies: "HTML, CSS, JS, React, ChartJS, CoinGecko API, ...",
+      image: "/wtwr.webp",
+    },
+    {
+      name: "Around The U.S.",
+      des: t("project_5_des"),
+      url: "https://github.com/ilyamukhamedov/se_project_aroundtheus",
+      technologies: "HTML, CSS, JS, React, ...",
+      image: "/around.webp",
+    },
+  ]);
 
   const refTab = useRef();
   const refDivs = useRef([]);
   CustomHook(refTab, refDivs);
+
   return (
     <section className="projects" id={t("projects_nav")} ref={refTab}>
       <div className="title" ref={(el) => el && refDivs.current.push(el)}>

@@ -1,12 +1,15 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
 const CustomHook = (refTab = null, refDivs = null) => {
   const thisTab = refTab;
   const thisDivs = refDivs;
   const activeTab = useSelector((state) => state.activeTab);
+  console.log(thisDivs);
   useEffect(() => {
     if (thisTab.current.classList.contains(activeTab)) {
+      console.log(activeTab);
+
       thisTab.current.scrollIntoView({ behavior: "smooth" });
     }
 

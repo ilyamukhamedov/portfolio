@@ -11,6 +11,7 @@ const LanguageModal = ({ toggleModal }) => {
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
     toggleModal();
+    location.reload();
   };
 
   return (

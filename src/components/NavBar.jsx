@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import { changeTabActive } from "../redux/action";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
