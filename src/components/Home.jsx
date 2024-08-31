@@ -34,15 +34,6 @@ const Home = () => {
           <Trans i18nKey={"home_des"} components={{ 1: <br /> }} />
         </div>
         <div className="box">
-          {/* <a
-            className="btn"
-            href="https://drive.google.com/file/d/1BXMGdNjqTigFBVvXPfZ901PhaDjJTqwY/view"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            {t("resume")}
-          </a> */}
-
           <button className="btn" onClick={handleButtonClick}>
             {t("resume")}
           </button>
