@@ -36,7 +36,7 @@ const Contacts = () => {
       <div className="title" ref={(el) => el && divs.current.push(el)}>
         {t("contacts")}
       </div>
-      <div className="list" ref={(el) => el && divs.current.push(el)}>
+      <div ref={(el) => el && divs.current.push(el)} className="list">
         {listContacts.map((value, key) => (
           <div className="item" key={key}>
             <h3>{value.title}</h3>
