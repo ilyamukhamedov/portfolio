@@ -198,14 +198,14 @@ header {
       align-content: center;
       font-weight: bold;
       text-decoration: none;
-      border: 1px solid #5bb450;
+      border: 2px solid #5bb450;
       background-color: transparent;
       width: max-content;
-      padding: 10px 10px;
+      padding: 12px 15px;
       border-radius: 15px;
       transition: 0.4s ease;
       &:hover {
-        border: 1px solid transparent;
+        /* border: 3px solid transparent; */
         box-shadow: 0px 0px 10px 2px #5bb450 inset;
       }
     }
