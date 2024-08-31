@@ -191,6 +191,7 @@ header {
     }
     & .btn {
       display: inline-block;
+      cursor: pointer;
       font-size: medium;
       color: var(--primary-color);
       align-content: center;

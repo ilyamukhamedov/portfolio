@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import CustomHook from "./CustomHook";
 import { useTranslation } from "react-i18next";
 
