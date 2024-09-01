@@ -22,4 +22,4 @@ To run this project locally, follow these steps:
 
 #### Deploy
 
-[https://ilya-potfolio.vercel.app/]
+[https://www.ilyam.tech/]
