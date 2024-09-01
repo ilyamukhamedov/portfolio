@@ -22,4 +22,4 @@ To run this project locally, follow these steps:
 
 #### Deploy
 
-[https://www.ilyam.tech/]
+[ilyam.tech]
