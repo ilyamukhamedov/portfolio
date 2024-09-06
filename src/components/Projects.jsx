@@ -19,7 +19,7 @@ const Projects = () => {
       des: t("project_2_des"),
       url: "https://github.com/ilyamukhamedov/landing_part2",
       link: "https://landing-part2.vercel.app/",
-      technologies: "HTML, CSS, JS, React, SwiperJS, Telegram api, ...",
+      technologies: "HTML, CSS, JS, React, SwiperJS, Telegram API, ...",
       image: "/landing2.webp",
     },
     {
@@ -91,9 +91,8 @@ const Projects = () => {
                   rel="noreferrer"
                 >
                   <img alt="image of link" src="/github-white.svg" />
+                  <h4>{t("github")}</h4>
                 </a>
-
-                <h4>{t("github")}</h4>
               </div>
               <div
                 ref={(el) => el && refDivs.current.push(el)}
@@ -106,9 +105,8 @@ const Projects = () => {
                   rel="noreferrer"
                 >
                   <img alt="image of link" src="/globe.svg" />
+                  <h4>{t("deploy")}</h4>
                 </a>
-
-                <h4>{t("deploy")}</h4>
               </div>
             </div>
           </div>

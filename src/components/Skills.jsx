@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHtml5,
   faCss3,
-  faJs,
   faReact,
   faNode,
   faGitAlt,
@@ -15,9 +14,11 @@ const Skills = () => {
   const [listSkills] = useState([
     { name: "HTML5", icon: faHtml5 },
     { name: "CSS3", icon: faCss3 },
-    { name: "JavaScript", icon: faJs },
+    { name: "JavaScript", icon: "/js.svg" },
     { name: "React", icon: faReact },
     { name: "Node.js", icon: faNode },
+    { name: "Next.js", icon: "/next.svg" },
+    { name: "TypeScript", icon: "/ts.svg" },
     { name: "Git", icon: faGitAlt },
     { name: "Babel", icon: "/babel.svg" },
     { name: "Postman", icon: "/postman.svg" },
@@ -29,6 +30,8 @@ const Skills = () => {
     { name: "Vite", icon: "/vite.svg" },
     { name: "Figma", icon: "/figma.svg" },
     { name: "VS Code", icon: "/vscode.svg" },
+    { name: "GCP", icon: "/google.svg" },
+    { name: "NGINX", icon: "/nginx.svg" },
   ]);
 
   const refTab = useRef();
