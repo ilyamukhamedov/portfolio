@@ -42,7 +42,7 @@ i18n
           contacts_mail: "Email",
           contacts_phone: "Phone Number",
           contacts_telegram: "Telegram",
-          contacts_des: "Contact me",
+          contacts_des: "@Kreker911",
         },
       },
       ru: {
@@ -76,7 +76,7 @@ i18n
           contacts_mail: "Электронная почта",
           contacts_phone: "Номер телефона",
           contacts_telegram: "Телеграм",
-          contacts_des: "Связаться со мной",
+          contacts_des: "@Kreker911",
         },
       },
     },
